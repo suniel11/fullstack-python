@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete a user</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto mt-10 p-4 bg-white rounded shadow">
+        <a href="{{ url_for('user_list') }}" class="text-blue-500 mb-4 inline-block">User List</a>
+        <h1 class="text-2xl font-bold mb-4">Delete User</h1>
+        <form action="{{ url_for('delete_user', user_id=user['_id']) }}" method="POST">
+            <p class="mb-4">Are you sure you want to delete user <strong>{{ user['name'] }}</strong>?</p>
+            <button type="submit" class="bg-red-500 text-white px-4 py-2 rounded">Delete</button>
+        </form>
+    </div>
+</body>
+</html>

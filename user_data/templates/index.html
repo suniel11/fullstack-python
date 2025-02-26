@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+    <title>Home</title>
+</head>
+<body>
+    
+    <div class="flex flex-col bg-gray-500  justify-center items-center h-screen">
+    <h1 class="text-2xl font-bold">Welcome to the User Database</h1>
+   <div class="flex flex-row space-x-4">
+    <button class="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">
+        <a href="{{ url_for('add_user') }}">Add User</a>
+    </button>
+    <button class="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">
+        <a href="{{ url_for('user_list') }}">User List</a>
+    </button>
+    <!-- <a href="{{ url_for('user_list') }}">User List</a> -->
+
+</div>
+</div>
+</body>
+</html>

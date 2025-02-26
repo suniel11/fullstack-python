@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add User</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto p-4">
+        <h1 class="text-2xl font-bold mb-4">Add User</h1>
+        <form action="{{ url_for('add_user') }}" method="post" enctype="multipart/form-data" class="bg-white p-6 rounded shadow">
+            <div class="mb-4">
+                <label for="name" class="block text-sm font-medium text-gray-700">Name:</label>
+                <input type="text" id="name" name="name" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm">
+            </div>
+            <div class="mb-4">
+                <label for="dob" class="block text-sm font-medium text-gray-700">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm">
+            </div>
+            <div class="mb-4">
+                <label for="course" class="block text-sm font-medium text-gray-700">Course:</label>
+                <input type="text" id="course" name="course" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm">
+            </div>
+            <div class="mb-4">
+                <label for="semester" class="block text-sm font-medium text-gray-700">Semester:</label>
+                <input type="text" id="semester" name="semester" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm">
+            </div>
+            <div class="mb-4">
+                <label for="cgpa" class="block text-sm font-medium text-gray-700">CGPA:</label>
+                <input type="text" id="cgpa" name="cgpa" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm">
+            </div>
+            <div class="mb-4">
+                <label for="picture" class="block text-sm font-medium text-gray-700">Picture:</label>
+                <input type="file" id="picture" name="picture" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm">
+            </div>
+            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Add User</button>
+        </form>
+    </div>
+</body>
+</html>
