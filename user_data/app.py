@@ -3,13 +3,19 @@ from flask import Flask, request, redirect, url_for, render_template
 from werkzeug.utils import secure_filename
 from pymongo import MongoClient
 from bson.objectid import ObjectId
+from dotenv import load_dotenv
 
+# Load environment variables from .env file
+load_dotenv()
+
+# Get MongoDB URI from environment variable
+Mongo_uri = os.getenv('Mongo_uri')
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = 'static/uploads'
 app.config['ALLOWED_EXTENSIONS'] = {'png', 'jpg', 'jpeg', 'gif'}
 
-client = MongoClient("mongodb+srv://sunil:Suniel07@cluster0.ebv5vfe.mongodb.net/users_data")
+client = MongoClient(Mongo_uri)
 db = client.users_data
 users_collection = db.users
 
