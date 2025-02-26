@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Students{% endblock %}
+
+{% block content %}
+<h1 class="text-3xl font-bold mb-6 text-center text-blue-600">Students</h1>
+<ul class="bg-white p-6 rounded shadow">
+    {% for student in students %}
+        <li class="mb-4">
+            <h2 class="text-xl font-bold">{{ student.name }}</h2>
+            <p><strong>Date of Birth:</strong> {{ student.dob }}</p>
+            <p><strong>Course:</strong> {{ student.course }}</p>
+            <p><strong>Semester:</strong> {{ student.semester }}</p>
+            <p><strong>CGPA:</strong> {{ student.cgpa }}</p>
+            <p><strong>Subject:</strong> {{ student.subject }}</p>
+            {% if student.picture %}
+                <p><strong>Picture:</strong></p>
+                <img src="{{ url_for('static', filename='uploads/' ~ student.picture) }}" alt="Student Picture" class="mb-4">
+            {% endif %}
+            <a href="{{ url_for('edit_student', student_id=student._id) }}" class="text-blue-500">Edit</a>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

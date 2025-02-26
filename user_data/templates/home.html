@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<h1 class="text-3xl font-bold mb-6 text-center text-blue-600">Recent Announcements</h1>
+<ul class="bg-white p-6 rounded shadow">
+    {% for announcement in announcements %}
+        <li class="mb-4">
+            <h2 class="text-xl font-bold">{{ announcement.title }}</h2>
+            <p>{{ announcement.content }}</p>
+            <p class="text-sm text-gray-500">Posted by {{ announcement.username }} on {{ announcement.time }}</p>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}
